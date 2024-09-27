@@ -25,6 +25,6 @@ Ensure you have the following installed:
 Clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/your-repo/aqary-app.git
-cd aqary-app
-npm install
+git clone https://github.com/DeepakmBinmile/next-tasks.git
+cd next-tasks
+yarn install
