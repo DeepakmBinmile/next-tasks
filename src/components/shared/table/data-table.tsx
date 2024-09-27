@@ -19,7 +19,7 @@ import { UIEvent, useCallback, useEffect, useMemo, useRef, useState } from 'reac
 import { Box, Button, IconButton, MenuItem } from '@mui/material'
 import { useRouter } from 'next/navigation'
 import LongMenu from './data-table-components'
-import ProductModal from '../modal'
+import ProductModal from '../modal/modal'
 
 interface DataTableProps<IProduct extends object> {
   rawColumns: MRT_ColumnDef<IProduct>[]

@@ -17,9 +17,9 @@ import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined'
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined'
 import Link from 'next/link'
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined'
-import { dashboardSidebarStyles } from '../_styles/sidebar.modules'
-
+import { dashboardSidebarStyles } from '../../_styles/sidebar.modules'
 import SnippetFolderOutlinedIcon from '@mui/icons-material/SnippetFolderOutlined'
+import { styles } from './_styles/style'
 
 export default function DashboardSidebarComponent({
   drawerWidth,
@@ -29,13 +29,12 @@ export default function DashboardSidebarComponent({
   topPadding: number
 }) {
   const pathname = usePathname()
+
   return (
     <Drawer
       variant="permanent"
       sx={{
-        zIndex: 100,
-        width: drawerWidth,
-        flexShrink: 0,
+        zIndex: '0 !important',
         '& .MuiDrawer-paper': {
           width: drawerWidth,
           border: 'none',
@@ -45,7 +44,7 @@ export default function DashboardSidebarComponent({
     >
       <Box
         sx={{
-          overflowY: 'auto',
+          ...styles.box,
           paddingTop: `${topPadding}px`,
           width: drawerWidth,
         }}
@@ -93,19 +92,7 @@ export default function DashboardSidebarComponent({
             expanded: [],
           },
         ].map((acc) => (
-          <Accordion
-            key={acc?.title}
-            sx={{
-              shadows: 'none',
-              boxShadow: 'none',
-              border: 'none !important',
-              minHeight: 68,
-              alignItems: 'center',
-              display: 'flex',
-              justifyContent: 'space-between',
-              flexDirection: 'column',
-            }}
-          >
+          <Accordion key={acc?.title} sx={styles.accordian}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1-content"
@@ -115,28 +102,13 @@ export default function DashboardSidebarComponent({
               {acc?.icon}
               <Typography sx={dashboardSidebarStyles.accordionSummaryText}>{acc?.title}</Typography>
             </AccordionSummary>
-            <AccordionDetails
-              sx={{
-                padding: 0,
-                shadows: 'none',
-                boxShadow: 'none',
-                border: 'none !important',
-              }}
-            >
+            <AccordionDetails sx={styles.accordianDetails}>
               <List sx={dashboardSidebarStyles.list}>
                 {acc?.expanded?.map((link) => (
                   <ListItem
                     sx={{
-                      padding: 3,
-                      marginTop: 4,
-                      marginBottom: 3,
-                      width: '100%',
-                      minWidth: 200,
+                      ...styles.listItem,
                       backgroundColor: pathname === link?.href ? '#dae7f9' : 'transparent',
-                      borderRadius: 2,
-                      '&:hover': {
-                        backgroundColor: '#E2F3FD',
-                      },
                     }}
                     key={link?.title}
                   >

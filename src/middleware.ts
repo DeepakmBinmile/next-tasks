@@ -1,10 +1,8 @@
 import { type NextRequest, NextResponse } from 'next/server'
 import { updateSession } from './server/auth/auth'
+import { AUTH_ROUTE, DASHBOARD_ROUTE, SESSION_COOKIE_NAME } from './_utils/routes-constant'
 
-export const AUTH_ROUTE = '/'
-export const DASHBOARD_ROUTE = '/dashboard'
 
-export const SESSION_COOKIE_NAME = 'session'
 
 const protectedRoutes = [DASHBOARD_ROUTE]
 

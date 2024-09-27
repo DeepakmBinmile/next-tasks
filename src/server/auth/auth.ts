@@ -1,4 +1,4 @@
-import { LoginFormInputs } from '@/app/(site)/_components/login-form'
+import { LoginFormInputs } from '@/app/(auth)/_components/login-form'
 import axios from 'axios'
 import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
@@ -33,14 +33,13 @@ export async function login(formData: LoginFormInputs) {
   // Validate login data
   if (!data.username || !data.password) {
     // console.log('Invalid credentials')
-    return null
+    return false
   }
   try {
     const response = await axios.post<UserAuth>('https://dummyjson.com/auth/login', data)
     const session = response.data
     if (!session) {
-      // console.log('Failed to decode session')
-      return null
+      return false
     }
     // Set session cookie with decoded session data
     cookies().set('session', JSON.stringify(session), {
@@ -48,10 +47,11 @@ export async function login(formData: LoginFormInputs) {
       secure: true,
       maxAge,
     })
+    return true
     // console.log('Login successful, session set:', session)
   } catch (error) {
     // console.error('Login failed', error)
-    return null
+    return false
   }
 }
 

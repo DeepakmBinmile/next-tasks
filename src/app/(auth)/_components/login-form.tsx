@@ -4,7 +4,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { TextField, Button, Box, Typography } from '@mui/material'
-import { Login } from '@/app/(site)/server'
+import { Login } from '@/app/(auth)/server'
 import { styles } from './_styles/styles'
 import { z } from 'zod'
 import { loginSchema } from './_utils/schema'
@@ -25,7 +25,10 @@ const LoginForm: React.FC = () => {
   // Handle form submission
   const onSubmit = async (data: LoginFormInputs) => {
     // Perform the login process with the submitted data
-    await Login(data)
+    const res = await Login(data)
+    if (res == false) {
+      alert('Invalid credentials')
+    }
   }
 
   return (

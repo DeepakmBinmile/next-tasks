@@ -1,5 +1,5 @@
 import { IChildren } from '@/resources/types/types'
 
-export default function SiteLayout({ children }: IChildren) {
+export default function AuthLayout({ children }: IChildren) {
   return <main>{children}</main>
 }

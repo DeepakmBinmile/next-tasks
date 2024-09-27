@@ -1,8 +1,9 @@
 import { Box, Button, CircularProgress, Typography } from '@mui/material'
 import React from 'react'
-import DashboardLayoutWrapper from './_components/dashboard-layout'
-import DashboardPageWrapper from './_components/dashboard-page-wrapper'
+
 import NextLink from 'next/link'
+import DashboardLayoutWrapper from './_components/_dashboard-layout/dashboard-layout'
+import DashboardPageWrapper from './_components/_dashboard-page-wrapper/dashboard-page-wrapper'
 
 const NotFoundPage = () => {
   return (

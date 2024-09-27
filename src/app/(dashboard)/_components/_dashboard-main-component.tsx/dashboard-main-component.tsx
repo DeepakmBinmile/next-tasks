@@ -1,7 +1,7 @@
 'use client'
 
-import theme from '@/resources/theme/theme'
 import { Box, styled } from '@mui/material'
+import { styles } from './_styles/style'
 
 type MainContentWrapperProps = {
   children: React.ReactNode
@@ -22,12 +22,7 @@ const MainContentWrapper = ({ children, drawerWidth, topPadding }: MainContentWr
   return (
     <MainContent>
       <Box
-        sx={{
-          padding: '20px',
-          borderRadius: theme.shape.borderRadius,
-          backgroundColor: theme.palette.secondary.main,
-          height: '100%',
-        }}
+        sx={styles.box}
       >
         {children}
       </Box>

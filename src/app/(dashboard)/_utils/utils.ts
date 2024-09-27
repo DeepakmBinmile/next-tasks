@@ -7,11 +7,3 @@ export const fetchUrlTags = {
   PLAN: 'plan',
   PARTNERS: 'partner',
 } as const
-
-// export async function waitForFiveSeconds() {
-//   return new Promise((resolve) => {
-//     setTimeout(() => {
-//       resolve('Done!');
-//     }, 2000);
-//   });
-// }

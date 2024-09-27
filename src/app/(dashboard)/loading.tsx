@@ -1,6 +1,6 @@
 import { Box, CircularProgress, Typography } from '@mui/material'
 import React from 'react'
-import DashboardPageWrapper from './_components/dashboard-page-wrapper'
+import DashboardPageWrapper from './_components/_dashboard-page-wrapper/dashboard-page-wrapper'
 
 const Loading = () => {
   return (

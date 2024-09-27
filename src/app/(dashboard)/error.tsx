@@ -4,7 +4,7 @@ import { Box, Button, Typography } from '@mui/material'
 import React from 'react'
 
 import { IError } from '@/resources/types/types'
-import DashboardPageWrapper from './_components/dashboard-page-wrapper'
+import DashboardPageWrapper from './_components/_dashboard-page-wrapper/dashboard-page-wrapper'
 
 const DashboardErrorPage = ({ error, reset }: IError) => {
   return (
