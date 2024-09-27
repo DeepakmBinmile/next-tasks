@@ -17,7 +17,6 @@ import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined'
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined'
 import Link from 'next/link'
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined'
-import { dashboardSidebarStyles } from '../../_styles/sidebar.modules'
 import SnippetFolderOutlinedIcon from '@mui/icons-material/SnippetFolderOutlined'
 import { styles } from './_styles/style'
 
@@ -52,43 +51,43 @@ export default function DashboardSidebarComponent({
         {[
           {
             title: 'Analytics',
-            icon: <DashboardOutlinedIcon sx={dashboardSidebarStyles.icon} />,
+            icon: <DashboardOutlinedIcon sx={styles.icon} />,
             expanded: [],
           },
           {
             title: 'Project',
-            icon: <BusinessOutlinedIcon sx={dashboardSidebarStyles.icon} />,
+            icon: <BusinessOutlinedIcon sx={styles.icon} />,
             expanded: [
               {
                 title: 'Add Projects',
                 href: '/dashboard/project-add',
-                icon: <SnippetFolderOutlinedIcon sx={dashboardSidebarStyles.icon} />,
+                icon: <SnippetFolderOutlinedIcon sx={styles.icon} />,
               },
               {
                 title: 'Project Table',
                 href: '/dashboard/projects',
-                icon: <BusinessOutlinedIcon sx={dashboardSidebarStyles.icon} />,
+                icon: <BusinessOutlinedIcon sx={styles.icon} />,
               },
               {
                 title: 'Deleted',
                 href: '/dashboard/projects-delete',
-                icon: <DeleteOutlinedIcon sx={dashboardSidebarStyles.icon} />,
+                icon: <DeleteOutlinedIcon sx={styles.icon} />,
               },
             ],
           },
           {
             title: 'Property',
-            icon: <GavelIcon sx={dashboardSidebarStyles.icon} />,
+            icon: <GavelIcon sx={styles.icon} />,
             expanded: [],
           },
           {
             title: 'Problem reports',
-            icon: <GavelIcon sx={dashboardSidebarStyles.icon} />,
+            icon: <GavelIcon sx={styles.icon} />,
             expanded: [],
           },
           {
             title: 'Settings',
-            icon: <GavelIcon sx={dashboardSidebarStyles.icon} />,
+            icon: <GavelIcon sx={styles.icon} />,
             expanded: [],
           },
         ].map((acc) => (
@@ -97,13 +96,13 @@ export default function DashboardSidebarComponent({
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1-content"
               id="panel1-header"
-              sx={dashboardSidebarStyles.accordionSummary}
+              sx={styles.accordionSummary}
             >
               {acc?.icon}
-              <Typography sx={dashboardSidebarStyles.accordionSummaryText}>{acc?.title}</Typography>
+              <Typography sx={styles.accordionSummaryText}>{acc?.title}</Typography>
             </AccordionSummary>
             <AccordionDetails sx={styles.accordianDetails}>
-              <List sx={dashboardSidebarStyles.list}>
+              <List sx={styles.list}>
                 {acc?.expanded?.map((link) => (
                   <ListItem
                     sx={{
@@ -119,7 +118,7 @@ export default function DashboardSidebarComponent({
                         color: pathname === link?.href ? '#6c96cf' : 'black',
                       }}
                     >
-                      <Typography sx={dashboardSidebarStyles.listItemText}>
+                      <Typography sx={styles.listItemText}>
                         {link?.icon}
                         {link?.title}
                       </Typography>

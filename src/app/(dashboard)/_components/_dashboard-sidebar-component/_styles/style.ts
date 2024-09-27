@@ -31,5 +31,34 @@ export const styles = {
     flexShrink: 0,
     overflowY: 'auto',
   },
-  
+  icon: {
+    height: 20,
+  },
+  listItemText: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 2,
+    fontSize: 12,
+  },
+  list: {
+    padding: 0,
+    overflowX: 'hidden',
+  },
+  accordionSummaryText: {
+    paddingLeft: 4,
+    display: 'flex',
+    alignItems: 'center',
+    gap: 2,
+    shadows: 'none',
+    boxShadow: 'none',
+  },
+  accordionSummary: {
+    width: '100%',
+    height: 18,
+    padding: '10px 16px',
+    margin: 0,
+    border: 'none !important',
+    shadows: 'none',
+    boxShadow: 'none',
+  },
 }
