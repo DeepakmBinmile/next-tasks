@@ -20,6 +20,7 @@ import { Box, Button, IconButton, MenuItem } from '@mui/material'
 import { useRouter } from 'next/navigation'
 import LongMenu from './data-table-components'
 import ProductModal from '../modal/modal'
+import { DASHBOARD_ROUTE } from '@/_utils/routes-constant'
 
 interface DataTableProps<IProduct extends object> {
   rawColumns: MRT_ColumnDef<IProduct>[]
@@ -95,7 +96,7 @@ const DataTable = <IProduct extends object>({
       size="small"
       variant="outlined"
       type="button"
-      onClick={() => router.push('/dashboard/add-auction')}
+      onClick={() => router.push(DASHBOARD_ROUTE)}
     >
       Add auction
     </Button>
@@ -137,8 +138,7 @@ const DataTable = <IProduct extends object>({
       }
       setIsFetching(true)
       setIsError(false)
-      const baseUrl = 'https://dummyjson.com/products'
-
+      const baseUrl =   `${process.env.NEXT_PUBLIC_API_URL}/products`
       try {
         const response = await fetch(
           `${baseUrl}?page=${page}&limit=${limit}&search=${globalFilter}&sort=${sorting}`,

@@ -19,8 +19,8 @@ import TranslateRoundedIcon from '@mui/icons-material/TranslateRounded'
 import NotificationsNoneRoundedIcon from '@mui/icons-material/NotificationsNoneRounded'
 import FullscreenRoundedIcon from '@mui/icons-material/FullscreenRounded'
 import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded'
-import { Logout } from '@/app/(auth)/server'
 import { headerStyles } from './_styles/style'
+import { Logout } from '@/server/server'
 
 const HeaderButton = ({
   icon,

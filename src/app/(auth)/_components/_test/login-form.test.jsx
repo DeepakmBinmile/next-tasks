@@ -1,10 +1,10 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import LoginForm from '@/app/(auth)/_components/login-form'
-import { Login } from '@/app/(auth)/server'
+import { Login } from '@/server/server'
 
 // Mock the Login function
-jest.mock('@/app/(auth)/server', () => ({
+jest.mock('@/server/server', () => ({
   Login: jest.fn(),
 }))
 

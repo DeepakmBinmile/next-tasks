@@ -1,16 +1,16 @@
 'use server'
 
-import { login, logout } from '@/server/auth/auth'
 import { redirect } from 'next/navigation'
-import { LoginFormInputs } from './_components/login-form'
-import { AUTH_ROUTE, DASHBOARD_ROUTE } from '@/_utils/routes-constant'
+import { LoginFormInputs } from '../app/(auth)/_components/login-form'
+import { AUTH_ROUTE, PROJECT_ROUTE } from '@/_utils/routes-constant'
+import { login, logout } from './auth'
 
 export async function Login(formData: LoginFormInputs) {
   const data = await login(formData)
   if (data === false) {
     return false
   }
-  redirect(DASHBOARD_ROUTE)
+  redirect(PROJECT_ROUTE)
 }
 
 export async function Logout() {

@@ -1,25 +1,11 @@
 import { LoginFormInputs } from '@/app/(auth)/_components/login-form'
+import { AuthToken, User } from '@/resources/types/types'
 import axios from 'axios'
 import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
 
 const secretKey = process.env.SESSION_SECRET
 const encodedKey = new TextEncoder().encode(secretKey)
-interface AuthToken {
-  token: string
-  refreshToken: string
-}
-
-interface User {
-  id: number
-  username: string
-  email: string
-  firstName: string
-  lastName: string
-  gender: string
-  image: string
-}
-
 interface UserAuth extends AuthToken, User {}
 const maxAge = 604800
 
@@ -36,7 +22,7 @@ export async function login(formData: LoginFormInputs) {
     return false
   }
   try {
-    const response = await axios.post<UserAuth>('https://dummyjson.com/auth/login', data)
+    const response = await axios.post<UserAuth>(`${process.env.API_URL}/auth/login`, data)
     const session = response.data
     if (!session) {
       return false

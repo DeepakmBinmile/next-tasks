@@ -4,10 +4,10 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { TextField, Button, Box, Typography } from '@mui/material'
-import { Login } from '@/app/(auth)/server'
 import { styles } from './_styles/styles'
 import { z } from 'zod'
 import { loginSchema } from './_utils/schema'
+import { Login } from '@/server/server'
 
 // Define TypeScript interface for form data
 export type LoginFormInputs = z.infer<typeof loginSchema>

@@ -1,5 +1,5 @@
 import { type NextRequest, NextResponse } from 'next/server'
-import { updateSession } from './server/auth/auth'
+import { updateSession } from './server/auth'
 import { AUTH_ROUTE, DASHBOARD_ROUTE, SESSION_COOKIE_NAME } from './_utils/routes-constant'
 
 

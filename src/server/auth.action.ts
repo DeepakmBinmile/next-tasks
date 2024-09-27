@@ -1,6 +1,6 @@
 'use server'
 
-import { HOME_ROUTE, ROOT_ROUTE, SESSION_COOKIE_NAME } from '@/resources/constants/constants'
+import { AUTH_ROUTE, PROJECT_ROUTE, SESSION_COOKIE_NAME } from '@/_utils/routes-constant'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
@@ -12,11 +12,11 @@ export async function createSession(uid: string) {
     path: '/',
   })
 
-  redirect(HOME_ROUTE)
+  redirect(PROJECT_ROUTE)
 }
 
 export async function removeSession() {
   cookies().delete(SESSION_COOKIE_NAME)
 
-  redirect(ROOT_ROUTE)
+  redirect(AUTH_ROUTE)
 }
