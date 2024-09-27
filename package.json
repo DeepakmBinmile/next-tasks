@@ -25,7 +25,6 @@
     "@mui/styled-engine-sc": "6.1.0",
     "@mui/x-date-pickers": "7.14.0",
     "@tanstack/react-table": "8.20.5",
-    "axios": "1.7.7",
     "date-fns": "3.6.0",
     "firebase": "10.11.0",
     "material-react-table": "2.13.2",
